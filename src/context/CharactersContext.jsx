@@ -10,8 +10,6 @@ function changeChar(characterState, action) {
   switch (action.type) {
     case "SET_CHARS":
       let chars = action.payload;
-      console.log("action.payload api", action.payload);
-      console.log("characterState api", characterState);
       return { ...characterState, charactersApi: chars };
 
     default:

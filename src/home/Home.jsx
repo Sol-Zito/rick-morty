@@ -13,7 +13,7 @@ const Home = () => {
       .then((res) => res.data)
       .then((data) => setCharacters(data.results));
   };
-  console.log("characters en home", characters);
+
   return (
     <div>
       <h1 className="title">Rick & Morty</h1>

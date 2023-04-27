@@ -16,8 +16,6 @@ const DetailsCharacter = () => {
     setItem(true);
   }, [id]);
 
-  console.log(characterSelect);
-  console.log(item);
   return (
     <>
       <h1>Detalles:</h1>
