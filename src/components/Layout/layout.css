@@ -1,0 +1,18 @@
+.container-footer {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.container-footer>img {
+    width: 50px;
+    height: 50px;
+}
+
+.container-navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
