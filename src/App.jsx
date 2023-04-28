@@ -1,23 +1,31 @@
 import "./App.css";
 import "./index.css";
-import CharactersApiProvider from "./context/CharactersContext";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./home/Home";
-import DetailsCharacter from "./components/detailsCharacter/DetailsCharacter";
+import DetailsCharacterContainer from "./components/detailsCharacter/DetailsCharacterContainer";
+import NotFound from "./pages/NotFound/NotFound";
+import Home from "./pages/home/Home";
+import Layout from "./components/Layout/Layout";
+import CharactersContainer from "./components/characters/CharactersContainer";
+import ContextCharsProvider from "./Context/ContextChars";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <CharactersApiProvider>
+        <ContextCharsProvider>
           <Routes>
-            <Route path="/home" element={<Home />} />
-            <Route
-              path="/detailsCharacter/:id"
-              element={<DetailsCharacter />}
-            />
+            <Route element={<Layout />}>
+              <Route path="/" element={<h1>Login</h1>} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/characters" element={<CharactersContainer />} />
+              <Route
+                path="/detailsCharacter/:id"
+                element={<DetailsCharacterContainer />}
+              />
+            </Route>
+            <Route path="*" element={<NotFound />} />
           </Routes>
-        </CharactersApiProvider>
+        </ContextCharsProvider>
       </BrowserRouter>
     </div>
   );

@@ -1,11 +1,7 @@
 import React from "react";
 import CardCharacter from "../CardCharacter/CardCharacter";
 
-const Characters = ({ personajes, setCharacters }) => {
-  const charactersApp = personajes;
-  const clearCharacters = () => {
-    setCharacters(null);
-  };
+const Characters = ({ clearCharacters, charactersApp }) => {
   return (
     <div className="characters">
       <h1>Personajes:</h1>
