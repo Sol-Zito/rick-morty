@@ -9,7 +9,7 @@ const CardCharacter = ({ character }) => {
       </div>
       <div>
         <h3>{character.name}</h3>
-        <h6>
+        <h4>
           {character.status === "Alive" ? (
             <>
               <span className="alive" />
@@ -21,17 +21,16 @@ const CardCharacter = ({ character }) => {
               Dead
             </>
           )}
-        </h6>
+        </h4>
         <p className="text-grey">
-          <span>Especie: </span>
-          <span>{character.species}</span>
+          <span style={{ textDecoration: "underline" }}>Especie:</span>
+          <span> {character.species}</span>
         </p>
         <p className="text-grey">
-          <span>Origen: </span>
-          <span>{character.origin.name}</span>
+          <span style={{ textDecoration: "underline" }}>Origen:</span>
+          <span> {character.origin.name}</span>
         </p>
-      </div>
-      <div>
+
         <Link to={`/detailsCharacter/${character.id}`}>
           <button>More details</button>
         </Link>

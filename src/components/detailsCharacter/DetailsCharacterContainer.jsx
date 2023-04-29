@@ -8,13 +8,10 @@ const DetailsCharacterContainer = () => {
   const [characterSelect, setCharacterSelect] = useState(null);
   const { id } = useParams();
 
-  const [item, setItem] = useState(false);
-
   useEffect(() => {
     let api = axios
       .get(`https://rickandmortyapi.com/api/character/${id}`)
       .then((res) => setCharacterSelect(res.data));
-    setItem(true);
   }, [id]);
 
   return (
