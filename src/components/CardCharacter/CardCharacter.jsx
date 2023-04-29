@@ -28,12 +28,28 @@ const CardCharacter = ({ character }) => {
         </p>
         <p className="text-grey">
           <span style={{ textDecoration: "underline" }}>Origen:</span>
-          <span> {character.origin.name}</span>
+          <span>
+            {" "}
+            {character.origin.name === "Earth (Replacement Dimension)"
+              ? "Earth"
+              : character.origin.name}
+          </span>
         </p>
-
-        <Link to={`/detailsCharacter/${character.id}`}>
-          <button>More details</button>
-        </Link>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+          }}
+        >
+          <Link to={`/detailsCharacter/${character.id}`}>
+            <button>More details...</button>
+          </Link>
+          <Link>
+            <button>Add favs</button>
+          </Link>
+        </div>
       </div>
     </>
   );
